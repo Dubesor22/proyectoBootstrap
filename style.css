@@ -1,27 +1,7 @@
-.contenedor {
-  display: flex;
-  margin-top: 50px;
-}
-
-li {
-  list-style: none;
-  margin-right: 6px;
-}
-
 input {
   margin-bottom: 6px;
 }
 
-.form {
-  margin-left: 30px;
-  margin-top: 50px;
-  width: 40%;
-}
-
 .col {
   margin-bottom: 4px;
-}
-
-.btn-block {
-  width: 100%;
 }

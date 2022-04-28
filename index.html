@@ -24,58 +24,71 @@
     <title>Proyecto Bootstrap</title>
   </head>
   <body>
-    <nav class="contenedor">
-      <ul></ul>
-      <li><a href="#">Formulario</a></li>
-      <li><a href="#">Vista usuarios</a></li>
-    </nav>
-
-    <form class="form">
-      <div class="form-row">
-        <p>Formulario</p>
-        <div class="col">
-          <input
-            type="text"
-            class="form-control"
-            id="name"
-            placeholder="Nombre"
-          />
-        </div>
-        <div class="col">
-          <input
-            type="email"
-            class="form-control"
-            id="mail"
-            placeholder="Correo"
-          />
-        </div>
-        <input
-          type="password"
-          class="form-control"
-          id="password"
-          placeholder="Password"
-        />
-        <input
-          type="password"
-          class="form-control"
-          id="password2"
-          placeholder="Confirm Password"
-        />
-        <input
-          type="submit"
-          value="Register"
-          id="btn"
-          class="btn btn-info btn-block"
-        />
-        <button id="delete" class="btn btn-danger btn-block">
-          BORRAR TODO
-        </button>
+    <nav
+      class="navbar navbar-expand-sm navbar-light"
+      style="background-color: #e3f2fd"
+    >
+      <div class="container-fluid">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" href="#formulario">Formulario</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Lista Usuarios</a>
+          </li>
+        </ul>
       </div>
-    </form>
-    <div id="msg"></div>
+    </nav>
+    <div class="container bg-light pb-5">
+      <form id="formulario" class="form pt-5 mx-auto" style="width: 200px">
+        <div class="form-row">
+          <p>Formulario</p>
+          <div class="col">
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              placeholder="Nombre"
+            />
+          </div>
+          <div class="col">
+            <input
+              type="email"
+              class="form-control"
+              id="mail"
+              placeholder="Correo"
+            />
+          </div>
+          <input
+            type="password"
+            class="form-control"
+            id="password"
+            placeholder="Password"
+          />
+          <input
+            type="password"
+            class="form-control"
+            id="password2"
+            placeholder="Confirm Password"
+          />
+          <input
+            type="submit"
+            value="Register"
+            id="btn"
+            class="btn btn-info btn-block w-100"
+          />
+          <button id="delete" class="btn btn-danger btn-block w-100">
+            BORRAR TODO
+          </button>
+        </div>
+      </form>
 
-    <div class="container"></div>
-
+      <div id="msg"></div>
+      <div class="container mx-0">
+        <p>Lista de Usuarios:</p>
+      </div>
+      <ul class="list-group mt-5" id="lista"></ul>
+    </div>
     <script src="./main.js"></script>
   </body>
 </html>

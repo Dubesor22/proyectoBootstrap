@@ -7,7 +7,7 @@ let msg = document.querySelector("#msg");
 let validationEmail = /(\w+?@\w+?\x2E.+)/;
 let borrado = document.querySelector("#delete");
 let usuarios = [];
-let listarUsuario = document.querySelector(".container");
+let listarUsuario = document.querySelector("#lista");
 
 //funcion de validar los campos
 function validar() {
@@ -77,5 +77,5 @@ function borrar() {
 borrado.addEventListener("click", borrar);
 
 function addNewUser(userData) {
-  listarUsuario.innerHTML += `<p> ${userData.nombre}, ${userData.correo} </p>`;
+  listarUsuario.innerHTML += `<li class="list-group-item"> ${userData.nombre}, ${userData.correo} </li>`;
 }
