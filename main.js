@@ -17,6 +17,7 @@ function validar(e) {
     password.value === "" ||
     passConfirm.value === ""
   ) {
+    gi;
     msg.innerHTML = "Please enter all fields";
   } else if (validationEmail.test(email.value) !== true) {
     msg.innerHTML = "Please enter a correct email";
