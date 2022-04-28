@@ -7,62 +7,65 @@ let msg = document.querySelector("#msg");
 let validationEmail = /(\w+?@\w+?\x2E.+)/;
 let borrado = document.querySelector("#delete");
 let usuarios = [];
+let listarUsuario = document.querySelector(".container");
 
 //funcion de validar los campos
 function validar() {
+  let isValid = false;
   if (
     nombre.value === "" ||
     email.value === "" ||
     password.value === "" ||
     passConfirm.value === ""
   ) {
-    gi;
-    msg.innerHTML = "Please enter all fields";
+    printMsg("Please enter all fields");
   } else if (validationEmail.test(email.value) !== true) {
-    msg.innerHTML = "Please enter a correct email";
+    printMsg("Please enter a correct email");
+  } else if (password.value !== passConfirm.value) {
+    printMsg("Las contraseñas tienen que coincidir");
   } else {
-    msg.innerHTML = "Usuario creado correctamente";
+    printMsg("Usuario creado correctamente");
+    isValid = true;
   }
+  return isValid;
+}
 
+function printMsg(mensaje) {
+  msg.innerHTML = mensaje;
   setTimeout(function () {
     msg.innerHTML = "";
   }, 5000);
 }
 
 //funcion para subir al LocalStorage
-function enviarDatos() {
-  if (validationEmail.test(email.value) == true) {
-    let info = {
-      nombre: nombre.value,
-      correo: email.value,
-      contraseña: password.value,
-    };
-    usuarios.push(info);
-    localStorage.setItem("Info", JSON.stringify(usuarios));
-  }
+function enviarDatos(userData) {
+  usuarios.push(userData);
+  localStorage.setItem("info", JSON.stringify(usuarios));
 }
 
 //funcion para comparar contraseñas
-function compararContraseña(e) {
+function crearUsuario(e) {
   e.preventDefault();
-  if (password.value === passConfirm.value) {
-    validar();
-    enviarDatos();
-    nombre.value = "";
-    email.value = "";
-    password.value = "";
-    passConfirm.value = "";
-  } else {
-    password.value = "";
-    passConfirm.value = "";
-    msg.innerHTML = "Las contraseñas no son iguales.";
-    setTimeout(function () {
-      msg.innerHTML = "";
-    }, 5000);
+  if (!validar()) {
+    return;
   }
+  let userData = {
+    nombre: nombre.value,
+    correo: email.value,
+    contraseña: password.value,
+  };
+  enviarDatos(userData);
+  addNewUser(userData);
+  resetForm();
+}
+function resetForm() {
+  nombre.value = "";
+  email.value = "";
+  password.value = "";
+  passConfirm.value = "";
 }
 
-boton.addEventListener("click", compararContraseña);
+boton.addEventListener("click", crearUsuario);
 
 //Funcion de borrar toda la memoria y pantalla (reset)
 function borrar() {
@@ -72,3 +75,7 @@ function borrar() {
 }
 
 borrado.addEventListener("click", borrar);
+
+function addNewUser(userData) {
+  listarUsuario.innerHTML += `<p> ${userData.nombre}, ${userData.correo} </p>`;
+}
