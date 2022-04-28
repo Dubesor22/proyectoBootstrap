@@ -26,9 +26,28 @@ function validar(e) {
 
   setTimeout(function () {
     msg.innerHTML = "";
-  }, 3000);
+  }, 5000);
 }
 
-function enviaDatos() {}
+//funcion para subir al LocalStorage
+function enviarDatos()
+  if(validationEmail.test(email.value) == true){
+    let info = {
+      nombre: nombre.value,
+      correo: email.value,
+      contraseña: password.value
+  }
+  usuarios.push(info);
+  localStorage.setItem('Info', JSON.stringify(usuarios));
+  document.getElementById('nombre').value = '';
+  document.getElementById('email').value = '';
+  document.getElementById('password').value = '';
+} 
+
+//funcion para comparar contraseñas
 
 boton.addEventListener("click", validar);
+boton.addEventListener("click", enviarDatos);
+
+
+
