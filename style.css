@@ -1,3 +1,10 @@
+.navbar{
+  position: fixed;
+  right: 0;
+  left: 0;
+  width: 100%;
+}
+
 input {
   margin-bottom: 6px;
 }
@@ -11,6 +18,7 @@ input {
   justify-content: center;
   align-items: center;
   font-size: 23px;
+  margin-top: 50px;
 }
 
 /* .lista-usuario{
