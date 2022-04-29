@@ -58,6 +58,7 @@ function crearUsuario(e) {
   addNewUser(userData);
   resetForm();
 }
+//Funcion resetear form
 function resetForm() {
   nombre.value = "";
   email.value = "";
@@ -76,6 +77,7 @@ function borrar() {
 
 borrado.addEventListener("click", borrar);
 
+//imprime usuarios en el html
 function addNewUser(userData) {
   listarUsuario.innerHTML += `<li class="list-group-item"> ${userData.nombre}, ${userData.correo} </li>`;
 }
