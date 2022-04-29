@@ -21,9 +21,13 @@ function validar() {
     printMsg("Please enter all fields");
   } else if (validationEmail.test(email.value) !== true) {
     printMsg("Please enter a correct email");
+    email.value = "";
   } else if (password.value !== passConfirm.value) {
     printMsg("Las contraseñas tienen que coincidir");
+    password.value = "";
+    passConfirm.value = "";
   } else {
+    msg.style.color = '#59E440'
     printMsg("Usuario creado correctamente");
     isValid = true;
   }
@@ -43,7 +47,6 @@ function enviarDatos(userData) {
   localStorage.setItem("info", JSON.stringify(usuarios));
 }
 
-//funcion para comparar contraseñas
 function crearUsuario(e) {
   e.preventDefault();
   if (!validar()) {
@@ -58,6 +61,7 @@ function crearUsuario(e) {
   addNewUser(userData);
   resetForm();
 }
+
 function resetForm() {
   nombre.value = "";
   email.value = "";
