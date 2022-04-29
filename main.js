@@ -21,7 +21,6 @@ function validar() {
     passConfirm.value === ""
   ) {
     printMsg("Please enter all fields");
-    mensajeAlerta.style.opacity = 1;
   } else if (validationEmail.test(email.value) !== true) {
     printMsg("Please enter a correct email");
     email.value = "";
