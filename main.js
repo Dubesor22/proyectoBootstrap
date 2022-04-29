@@ -4,6 +4,7 @@ const password = document.querySelector("#password");
 const passConfirm = document.querySelector("#password2");
 const boton = document.querySelector("#btn");
 let msg = document.querySelector("#msg");
+let msg2 = document.querySelector('#msg2')
 let validationEmail = /(\w+?@\w+?\x2E.+)/;
 let borrado = document.querySelector("#delete");
 let usuarios = [];
@@ -20,8 +21,8 @@ function validar() {
     password.value === "" ||
     passConfirm.value === ""
   ) {
-    printMsg("Please enter all fields");
     mensajeAlerta.style.opacity = 1;
+    printMsg("Please enter all fields");
   } else if (validationEmail.test(email.value) !== true) {
     printMsg("Please enter a correct email");
     email.value = "";
@@ -33,7 +34,6 @@ function validar() {
     passConfirm.value = "";
   } else {
     msg.style.color = "#fff";
-
     printMsg("Usuario creado correctamente");
     mensajeAlertaVerde.style.opacity = 1;
     isValid = true;
@@ -43,6 +43,8 @@ function validar() {
 
 function printMsg(mensaje) {
   msg.innerHTML = mensaje;
+  msg2.innerHTML = mensaje;
+
 
   setTimeout(function () {
     mensajeAlertaVerde.style.opacity = 0;
