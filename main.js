@@ -8,6 +8,8 @@ let validationEmail = /(\w+?@\w+?\x2E.+)/;
 let borrado = document.querySelector("#delete");
 let usuarios = [];
 let listarUsuario = document.querySelector("#lista");
+let mensajeAlerta = document.querySelector("#mensajeAlerta");
+let mensajeAlertaVerde = document.querySelector("#mensajeAlertaVerde");
 
 //funcion de validar los campos
 function validar() {
@@ -19,12 +21,21 @@ function validar() {
     passConfirm.value === ""
   ) {
     printMsg("Please enter all fields");
+    mensajeAlerta.style.opacity = 1;
   } else if (validationEmail.test(email.value) !== true) {
     printMsg("Please enter a correct email");
+    email.value = "";
+    mensajeAlerta.style.opacity = 1;
   } else if (password.value !== passConfirm.value) {
     printMsg("Las contraseñas tienen que coincidir");
+    mensajeAlerta.style.opacity = 1;
+    password.value = "";
+    passConfirm.value = "";
   } else {
+    msg.style.color = "#fff";
+
     printMsg("Usuario creado correctamente");
+    mensajeAlertaVerde.style.opacity = 1;
     isValid = true;
   }
   return isValid;
@@ -32,7 +43,10 @@ function validar() {
 
 function printMsg(mensaje) {
   msg.innerHTML = mensaje;
+
   setTimeout(function () {
+    mensajeAlertaVerde.style.opacity = 0;
+    mensajeAlerta.style.opacity = 0;
     msg.innerHTML = "";
   }, 5000);
 }
@@ -43,7 +57,6 @@ function enviarDatos(userData) {
   localStorage.setItem("info", JSON.stringify(usuarios));
 }
 
-//funcion para comparar contraseñas
 function crearUsuario(e) {
   e.preventDefault();
   if (!validar()) {
@@ -59,6 +72,7 @@ function crearUsuario(e) {
   resetForm();
 }
 //Funcion resetear form
+
 function resetForm() {
   nombre.value = "";
   email.value = "";
@@ -79,5 +93,5 @@ borrado.addEventListener("click", borrar);
 
 //imprime usuarios en el html
 function addNewUser(userData) {
-  listarUsuario.innerHTML += `<li class="list-group-item"> ${userData.nombre}, ${userData.correo} </li>`;
+  listarUsuario.innerHTML += `<li class="list-group-item" id="cards"> <b>Nombre de usuario:</b> ${userData.nombre}<br> <b>Correo:</b> ${userData.correo} </li><br>`;
 }

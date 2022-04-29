@@ -34,7 +34,7 @@
             <a class="nav-link active" href="#formulario">Formulario</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Lista Usuarios</a>
+            <a class="nav-link" href="#cards">Lista Usuarios</a>
           </li>
         </ul>
       </div>
@@ -42,7 +42,9 @@
     <div class="container bg-light pb-5">
       <form id="formulario" class="form pt-5 mx-auto" style="width: 200px">
         <div class="form-row">
-          <p>Formulario</p>
+          <div class="title2">
+            <p>Formulario</p>
+          </div>
           <div class="col">
             <input
               type="text"
@@ -82,10 +84,20 @@
           </button>
         </div>
       </form>
+      <br />
+      <div>
+        <div
+          id="mensajeAlertaVerde"
+          class="container-sm alert alert-success"
+        ></div>
 
-      <div id="msg"></div>
+        <div id="mensajeAlerta" class="container-sm alert alert-danger msg">
+          <p id="msg" class=""></p>
+        </div>
+      </div>
+      <!-- <div id="msg" class="msg"></div> -->
       <div class="container mx-0">
-        <p>Lista de Usuarios:</p>
+        <p class="lista-usuario">Lista de Usuarios:</p>
       </div>
       <ul class="list-group mt-5" id="lista"></ul>
     </div>

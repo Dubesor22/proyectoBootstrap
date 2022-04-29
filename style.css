@@ -5,3 +5,29 @@ input {
 .col {
   margin-bottom: 4px;
 }
+
+.title2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 23px;
+}
+
+/* .lista-usuario{
+  margin-top: 80px;
+  font-size: 20px;
+} */
+
+/* .msg{
+  color: red;
+} */
+
+#mensajeAlertaVerde {
+  width: 30vw;
+  opacity: 0;
+}
+
+#mensajeAlerta {
+  width: 30vw;
+  opacity: 0;
+}
