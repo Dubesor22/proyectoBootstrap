@@ -77,5 +77,5 @@ function borrar() {
 borrado.addEventListener("click", borrar);
 
 function addNewUser(userData) {
-  listarUsuario.innerHTML += `<li class="list-group-item"> ${userData.nombre}, ${userData.correo} </li>`;
+  listarUsuario.innerHTML += `<li class="list-group-item" id="cards"> <b>Nombre de usuario:</b> ${userData.nombre}<br> <b>Correo:</b> ${userData.correo} </li><br>`;
 }
