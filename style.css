@@ -32,8 +32,8 @@ body {
 }
 .caja-form {
   background-color: rgb(172, 199, 214);
-  width: 55vw;
-  border-radius: 5px;
+  width: 40vw;
+  border-radius: 10px;
   /* padding: 3em; */
 }
 .formulario {
