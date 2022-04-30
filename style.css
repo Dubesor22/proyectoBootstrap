@@ -1,10 +1,47 @@
-.navbar{
+body {
+  font-family: "Trebuchet MS", sans-serif;
+  background-image: linear-gradient(
+      120deg,
+      rgba(67, 48, 82, 0.35) 0%,
+      rgba(143, 210, 244, 0.35) 100%
+    ),
+    url(/assets/img/Fondo.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+/* main {
+  background-image: linear-gradient(
+      120deg,
+      rgba(67, 48, 82, 0.35) 0%,
+      rgba(143, 210, 244, 0.35) 100%
+    ),
+    url(/assets/img/Fondo.jpg);
+} */
+.title2 {
+  color: white;
+  font-weight: bold;
+}
+.navbar {
   position: fixed;
-  right: 0;
+  top: 0;
   left: 0;
   width: 100%;
 }
-
+.global {
+  width: 100%;
+}
+.caja-form {
+  background-color: rgb(172, 199, 214);
+  width: 55vw;
+  border-radius: 5px;
+  /* padding: 3em; */
+}
+.formulario {
+  width: 90%;
+  margin-top: 6em;
+  padding: 1em;
+  padding-bottom: 5em;
+}
 input {
   margin-bottom: 6px;
 }
@@ -21,10 +58,10 @@ input {
   margin-top: 50px;
 }
 
-/* .lista-usuario{
-  margin-top: 80px;
+.lista-usuario {
   font-size: 20px;
-} */
+  color: #fff;
+}
 
 /* .msg{
   color: red;
@@ -42,7 +79,7 @@ input {
   position: absolute;
 }
 
-.contenedor-alerts{
+.contenedor-alerts {
   position: relative;
   display: flex;
   align-items: center;
