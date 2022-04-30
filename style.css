@@ -1,3 +1,10 @@
+.navbar{
+  position: fixed;
+  right: 0;
+  left: 0;
+  width: 100%;
+}
+
 input {
   margin-bottom: 6px;
 }
@@ -11,6 +18,7 @@ input {
   justify-content: center;
   align-items: center;
   font-size: 23px;
+  margin-top: 50px;
 }
 
 /* .lista-usuario{
@@ -25,9 +33,20 @@ input {
 #mensajeAlertaVerde {
   width: 30vw;
   opacity: 0;
+  position: absolute;
 }
 
 #mensajeAlerta {
   width: 30vw;
   opacity: 0;
+  position: absolute;
+}
+
+.contenedor-alerts{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 80px;
+  margin-bottom: 80px;
 }
