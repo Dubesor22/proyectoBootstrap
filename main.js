@@ -22,9 +22,9 @@ function validar() {
     passConfirm.value === ""
   ) {
     mensajeAlerta.style.opacity = 1;
-    printMsg("Please enter all fields");
+    printMsg("Por favor, rellena todos los campos.");
   } else if (validationEmail.test(email.value) !== true) {
-    printMsg("Please enter a correct email");
+    printMsg("Por favor, introduce un email válido.");
     email.value = "";
     mensajeAlerta.style.opacity = 1;
   } else if (password.value !== passConfirm.value) {
@@ -34,7 +34,7 @@ function validar() {
     passConfirm.value = "";
   } else {
     msg.style.color = "#fff";
-    printMsg("Usuario creado correctamente");
+    printMsg("Usuario creado correctamente!");
     mensajeAlertaVerde.style.opacity = 1;
     isValid = true;
   }
