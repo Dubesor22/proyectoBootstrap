@@ -2,8 +2,8 @@ body {
   font-family: "Trebuchet MS", sans-serif;
   background-image: linear-gradient(
       120deg,
-      rgba(67, 48, 82, 0.35) 0%,
-      rgba(143, 210, 244, 0.35) 100%
+      rgb(250, 171, 54, 0.35) 0%,
+      rgba(36, 158, 160, 0.349) 100%
     ),
     url(/assets/img/Fondo.jpg);
   background-repeat: no-repeat;
@@ -29,6 +29,10 @@ body {
 }
 .global {
   width: 100%;
+}
+.form-row {
+  color: gray;
+  font-size: 14px;
 }
 .caja-form {
   background-color: rgb(172, 199, 214);
@@ -98,4 +102,5 @@ input {
   display: flex;
   flex-direction: row;
   gap: 2rem;
+  margin-bottom: 5rem;
 }
