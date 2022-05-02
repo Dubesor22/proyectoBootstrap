@@ -91,20 +91,29 @@
         <div class="contenedor-alerts">
           <div
             id="mensajeAlertaVerde"
-            class="container-sm alert alert-success msg"
+            class="spinner container-sm alert alert-success msg"
           >
+            <div class="spinner-grow text-success" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
             <p id="msg" class=""></p>
           </div>
 
-          <div id="mensajeAlerta" class="container-sm alert alert-danger msg">
-            <p id="msg2" class=""></p>
+          <div
+            id="mensajeAlerta"
+            class="spinner container-sm alert alert-danger msg"
+          >
+            <div class="spinner-grow text-danger" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+            <p id="msg2" class="error"></p>
           </div>
         </div>
 
         <div class="container mx-0">
-          <p class="lista-usuario">Lista de Usuarios:</p>
+          <p class="lista-usuario" id="cards">Lista de Usuarios:</p>
         </div>
-        <ul class="list-group mt-5" id="lista"></ul>
+        <div class="list-group mt-5" id="lista"></div>
       </div>
     </main>
     <script src="./main.js"></script>

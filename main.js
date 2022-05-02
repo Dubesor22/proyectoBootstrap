@@ -41,6 +41,7 @@ function validar() {
   return isValid;
 }
 
+// imprimir mensajes
 function printMsg(mensaje) {
   msg.innerHTML = mensaje;
   msg2.innerHTML = mensaje;
@@ -58,6 +59,7 @@ function enviarDatos(userData) {
   localStorage.setItem("info", JSON.stringify(usuarios));
 }
 
+// funcion para crear el usuario si validar es true
 function crearUsuario(e) {
   e.preventDefault();
   if (!validar()) {
@@ -93,6 +95,15 @@ function borrar() {
 borrado.addEventListener("click", borrar);
 
 //imprime usuarios en el html
+// function addNewUser(userData) {
+//   listarUsuario.innerHTML += `<li class="list-group-item" id="cards"> <b>Nombre de usuario:</b> ${userData.nombre}<br> <b>Correo:</b> ${userData.correo} </li><br>`;
+// }
+
 function addNewUser(userData) {
-  listarUsuario.innerHTML += `<li class="list-group-item" id="cards"> <b>Nombre de usuario:</b> ${userData.nombre}<br> <b>Correo:</b> ${userData.correo} </li><br>`;
+  listarUsuario.innerHTML += `<div class="card" style="width: 18rem;">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQo7UdctCTSiIBgEK0Z-0RwLYaJm5uKPKDsOQ&usqp=CAU" class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="card-text"><b>Nombre de usuario:</b> ${userData.nombre}<br> <b>Correo:</b> ${userData.correo} </p>
+  </div>
+</div></br>`;
 }
