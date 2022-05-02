@@ -33,7 +33,9 @@ _Menciona las herramientas que utilizaste para crear tu proyecto_
 * [CSS3](https://maven.css3.com/) - lo bonito
 * [Bootstrap](https://getbootstrap.com/) - el framework
 
-## Muestrario
+## Muestrario 🖼🖼
+
+![alt text](https://github.com/Dubesor22/proyectoBootstrap/blob/main/assets/img/captura-git.jpg)
 
 
 
